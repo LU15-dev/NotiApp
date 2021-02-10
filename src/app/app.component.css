@@ -1,0 +1,15 @@
+.bamboo-logo {
+    height: 50px;
+    padding: 0 32px;
+    box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.15);
+    background-color: var(--white);
+  }
+
+  .row {
+    display: flex;
+  }
+  .col {
+    flex-grow: 1;
+    align-items: center;
+    padding-left: 70px;
+  }

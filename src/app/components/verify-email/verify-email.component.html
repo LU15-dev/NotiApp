@@ -1,0 +1,32 @@
+<div class="displayTable">
+  <div class="displayTableCell">
+
+    <div class="px-logo">
+      <a href="" target="_blank">
+        <img src="./../../../assets/logo.jpg" alt="bamboo-logo">
+      </a>
+    </div>
+
+    <div class="authBlock">
+      <h3>¡Gracias por registarte!</h3>
+
+      <div class="formGroup" *ngIf="authService.userData as user">
+        <p class="text-center">Hemoso enviado un correo de confirmacion a:  <strong>{{user.email}}</strong>.</p>
+        <p class="text-center">Revisa tu bandeja de entrada y da click al link para verificar tu email.</p>
+      </div>
+
+      <div class="formGroup">
+        <button type="button" class="btn btnPrimary" (click)="authService.SendVerificationMail()">
+          <i class="fas fa-redo-alt"></i>
+          Reenviar email de verificación
+        </button>
+      </div>
+
+    </div>
+
+    <div class="redirectToLogin">
+      <span>Volver a <span class="redirect" routerLink="/sign-in"> iniciar sesión?</span></span>
+    </div>
+
+  </div>
+</div>

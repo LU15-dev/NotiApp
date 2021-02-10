@@ -1,0 +1,52 @@
+<div class="displayTable">
+  <div class="displayTableCell background-color:_blank">
+
+    <div class="px-logo">
+      <a href="" target="_blank">
+        <img src="../../../assets/logo.jpg" alt="bamboo-logo">
+      </a>
+    </div>
+
+    <div class="authBlock">
+      <h3>Registrate</h3>
+
+      <div class="formGroup">
+        <input type="Name" class="formControl" placeholder="Nombre" #userName required>
+      </div>
+
+      <div class="formGroup">
+        <input type="LastName" class="formControl" placeholder="Apellidos" #useLastName required>
+      </div>
+
+      <div class="formGroup">
+        <input type="email" class="formControl" placeholder="correo electronico" #userEmail required>
+      </div>
+
+      <div class="formGroup">
+        <input type="password" class="formControl" placeholder="contraseña" #userPwd required>
+      </div>
+
+      <div class="formGroup">
+        <input type="button" class="btn btnPrimary" value="Registrarme" (click)="authService.SignUp(userEmail.value, userPwd.value, userName.value, useLastName.value)">
+      </div>
+
+      <div class="formGroup">
+        <span class="or"><span class="orInner">ó</span></span>
+      </div>
+
+      
+      <div class="formGroup">
+        <button type="button" class="btn googleBtn" (click)="authService.GoogleAuth()">
+          <i class="fab fa-google"></i>
+          Continua con Google
+        </button>
+      </div>
+      
+    </div>
+
+    <div class="redirectToLogin">
+      <span>Ya tienes una cuenta? <span class="redirect" routerLink="/sign-in">Iniciar sesión</span></span>
+    </div>
+  </div>
+
+</div>

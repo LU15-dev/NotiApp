@@ -1,0 +1,47 @@
+
+<div class="col">
+
+  <div>
+    <div class="container-fluid">
+      <nav class="navbar navbar-dark bg-white flex-md-nowrap p-0 shadow">
+        <a class="navbar-brand col-sm-3 col-md-2 mr-0">
+          <img class="bamboo-logo" src="../../../assets/logo3.jpg" alt="Bamboo Logo">
+        </a>
+        <div class="text-align-center">
+          <h2>Noticias</h2>
+        </div> 
+        <div class="row" *ngIf="authService.userData as user">
+          <div class=" col-sm p-0">
+            <div class="media-body col-sm p-2">
+              <p>{{user.email}}</p>
+            </div>
+          </div>
+          <div class="perfil media col-sm">
+            <img class="perfil" src="{{(user.photoURL) ? user.photoURL : '/assets/dummy-user.png'}}"
+              alt="{{user.displayName}}">
+          </div>
+        </div>
+      </nav>
+    </div>
+
+    <div class="cards container-fluid ">
+      <div class="row flex shadow ">
+
+        <div class="card" style="width: 20rem;" *ngFor="let articulo of noticia.articles">
+          <img src="{{articulo.urlToImage}}" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">{{articulo.title}}</h5>
+            <p class="fecha">Publicado: {{articulo.publishedAt}}</p>
+            <p class="card-text">{{articulo.description}}</p>
+          </div>
+        </div> 
+        
+      </div>
+    </div>
+    
+  </div>
+ 
+</div>
+
+
+

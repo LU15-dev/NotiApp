@@ -1,0 +1,47 @@
+<div class="displayTable">
+  <div class="displayTableCell">
+
+    <div class="px-logo">
+      <a href="" >
+        <img src="../../../assets/logo.jpg" alt="Bamboo logo">
+      </a>
+    </div>
+
+    <div class="authBlock">
+      <h3>Iniciar sesión</h3>
+      <div class="formGroup">
+        <input type="text" class="formControl" placeholder="Correo electronico" #userName required>
+      </div>
+
+      <div class="formGroup">
+        <input type="password" class="formControl" placeholder="Contraseña" #userPassword required>
+      </div>
+
+      <!-- Calling SignIn Api from AuthService -->
+      <div class="formGroup">
+        <input type="button" class="btn btnPrimary" value="iniciar sesión" (click)="authService.SignIn(userName.value, userPassword.value)">
+      </div>
+
+      <div class="formGroup">
+        <span class="or"><span class="orInner">Ó</span></span>
+      </div>
+
+      <!-- Calling GoogleAuth Api from AuthService -->
+      <div class="formGroup">
+        <button type="button" class="btn googleBtn" (click)="authService.GoogleAuth()">
+          <i class="fab fa-google"></i>
+          Entrar con Google
+        </button>
+      </div>
+
+      <div class="forgotPassword">
+        <span routerLink="/forgot-password">no recuerda su contraseña?</span>
+      </div>
+    </div>
+
+    <div class="redirectToLogin">
+      <span>No tiene una cuenta?<span class="redirect" routerLink="/register-user"> Registrarse</span></span>
+    </div>
+
+  </div>
+</div>
